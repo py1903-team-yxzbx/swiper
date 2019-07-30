@@ -28,7 +28,7 @@ class User(models.Model):
         # 用出生年月日构造日期
         birth_date = datetime.date(self.birth_year, self.birth_month, self.birth_day)
 
-        # 用当前日期 减去 出生日期 , 取日子 // 365
+        # 用当前日期 减去 出生日期 , 取整 // 365
         return (today - birth_date).days // 365
 
 

@@ -1,16 +1,20 @@
-from django.core.cache import cache
-from django.http import JsonResponse
-from swiper.common import keys, errors
-from swiper.lib.http import render_json
-from swiper.lib.sms import send_sms
-from swiper.user.models import User
+# from django.core.cache import cache
+# from django.http import JsonResponse
+# from swiper.user.models import User
+from lib.http import render_json
+from lib.sms import send_sms
 
 
 def submit_phone(request):
-    '''提交手机号，发送验证码'''
-    # phone = request.POST.get('phone')
+    '''
+    提交手机号，发送验证码
+    :param request:
+    :return: none
+    '''
+    
     phone = request.GET.get('phone')
-    # print(phone)
+    # phone = request.POST.get('phone')
+    print(phone)
     send_sms(phone)
     return render_json(None)
 
