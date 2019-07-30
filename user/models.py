@@ -1,6 +1,6 @@
 import datetime
-
 from django.db import models
+
 
 class User(models.Model):
     '''用户模型'''
@@ -19,6 +19,7 @@ class User(models.Model):
     avatar = models.CharField(max_length=1024, verbose_name='个人形象的URL')
     location = models.CharField(max_length=16, verbose_name='常居地')
 
+
     @property
     def age(self):
         # 获取当前日期
@@ -29,6 +30,7 @@ class User(models.Model):
 
         # 用当前日期 减去 出生日期 , 取日子 // 365
         return (today - birth_date).days // 365
+
 
     def to_dict(self):
         return {
