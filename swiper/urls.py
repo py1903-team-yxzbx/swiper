@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+<<<<<<< HEAD
 
 from user import api as user_api
 
@@ -24,4 +25,10 @@ urlpatterns = [
     url(r'api/user/get/profile', user_api.get_profile),
     url(r'api/user/set/profile', user_api.set_profile),
     url(r'api/user/upload/avatar', user_api.upload_avatar),
+=======
+from user import api as user_api
+
+urlpatterns = [
+    url(r'api/user/submit/phone', user_api.submit_phone),
+>>>>>>> 15469dfd92303b73aebf7616168233fa355a0f34
 ]
